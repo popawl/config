@@ -1,0 +1,3 @@
+URxvt.font:xft:FiraCode:size=9
+URxvt.background: white
+URxvt.foreground: black
