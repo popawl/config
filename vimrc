@@ -47,7 +47,7 @@ set number
 
 " GUI settings
 "set guifont=Consolas:h10
-set guifont=Consolas\ 10
+set guifont=Fira\ Code\ 10
 colorscheme pencil
 set background=light
 set guioptions -=T
@@ -81,3 +81,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+set omnifunc=syntaxcomplete#Complete
+let g:SuperTabDefaultCompletionType = 'context'
