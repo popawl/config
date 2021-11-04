@@ -1,5 +1,5 @@
 " Pathogen
-execute pathogen#infect()
+"execute pathogen#infect()
 
 " Don't make efforts to make Vim VI-compatible
 set nocompatible
@@ -58,23 +58,23 @@ au GUIEnter * simalt ~x
 set hlsearch
 
 " Extras
-nmap <F9> :TagbarToggle<CR>
-nmap <F8> :NERDTreeToggle<CR>
-let g:NERDCreateDefaultMappings = 1
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+"nmap <F9> :TagbarToggle<CR>
+"nmap <F8> :NERDTreeToggle<CR>
+"let g:NERDCreateDefaultMappings = 1
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
 
-autocmd FileType python NERDTree | wincmd p
-autocmd FileType python TagbarOpen
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+"autocmd FileType python NERDTree | wincmd p
+"autocmd FileType python TagbarOpen
+"autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Python
-autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python map <buffer> <F6> :w<CR>:exec '!pyflakes' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F6> <esc>:w<CR>:exec '!pyflakes' shellescape(@%, 1)<CR>
-autocmd FileType python map <buffer> <F7> :w<CR>:exec '!black' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F7> <esc>:w<CR>:exec '!black' shellescape(@%, 1)<CR>
+"autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+"autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+"autocmd FileType python map <buffer> <F6> :w<CR>:exec '!pyflakes' shellescape(@%, 1)<CR>
+"autocmd FileType python imap <buffer> <F6> <esc>:w<CR>:exec '!pyflakes' shellescape(@%, 1)<CR>
+#autocmd FileType python map <buffer> <F7> :w<CR>:exec '!black' shellescape(@%, 1)<CR>
+#autocmd FileType python imap <buffer> <F7> <esc>:w<CR>:exec '!black' shellescape(@%, 1)<CR>
 
 " Navigation
 nnoremap <C-J> <C-W><C-J>
@@ -83,4 +83,4 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 set omnifunc=syntaxcomplete#Complete
-let g:SuperTabDefaultCompletionType = 'context'
+#let g:SuperTabDefaultCompletionType = 'context'
