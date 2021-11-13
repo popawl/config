@@ -1,0 +1,16 @@
+volumes:
+  jenkins_data:
+    driver_opts:
+      type: "nfs"
+      o: "addr=10.0.1.90,rw,nfsvers=4,async"
+      device: ":/docker/jenkins_data"
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-jdk11
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_data:/var/jenkins_home
+    restart: always

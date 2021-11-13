@@ -1,0 +1,36 @@
+volumes:
+  loki_data:
+    driver_opts:
+      type: "nfs"
+      o: "addr=10.0.1.90,rw,nfsvers=4,async"
+      device: ":/docker/loki_data"
+  promtail_data:
+    driver_opts:
+      type: "nfs"
+      o: "addr=10.0.1.90,rw,nfsvers=4,async"
+      device: ":/docker/promtail_data"
+#
+#networks:
+  #loki:
+
+services:
+  loki:
+    image: grafana/loki
+    ports:
+      - "3100:3100"
+    volumes:
+      - loki_data:/loki
+    restart: always
+
+  promtail:
+    image: grafana/promtail
+    volumes:
+      - /mnt/plus-efs-01/log:/mnt/plus-efs-01/log
+      - promtail_data:/promtail
+      - ./promtail/config.yml:/etc/promtail/config.yml
+    command: -config.file=/etc/promtail/config.yml
+    depends_on:
+      - loki
+    restart: always
+    #networks:
+      #- loki
